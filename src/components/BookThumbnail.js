@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import {
   Card,
   CardPrimary,
@@ -11,6 +12,9 @@ import {
   Icon
 } from 'rmwc';
 import moment from 'moment'
+const barStyle={
+  textDecoration: 'none'
+}
 class BookThumbnail extends Component {
   render() {
     return (
@@ -33,7 +37,7 @@ class BookThumbnail extends Component {
 	 <CardAction>{this.props.book.genre}</CardAction>
 		<CardAction>{this.props.book.ISBN}</CardAction> 
         <CardAction>{this.props.book.price}$</CardAction> 
-        <CardAction><Icon>edit</Icon></CardAction> 
+        <CardAction><Link to={`/update/${this.props.book.id}`} style={barStyle}><Icon>edit</Icon></Link></CardAction> 
 	</CardActions>
 </Card>
 </div>

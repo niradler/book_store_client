@@ -1,6 +1,6 @@
 import config from './config'
 import axios from 'axios'
-
+import moment from 'moment'
 class Server {
     constructor(config) {
         this.config = config
@@ -18,17 +18,20 @@ class Server {
             url: this.config.url.concat(this.config.actions['getAll'].path),
           });
     }
-    update(book) {
+    update(id,book) {
+        if(book.publication_date){//format date
+            book.publication_date=moment(book.publication_date,'YYYY-MM-DD').format('YYYY-MM-DD');
+        }
         return axios({
             method: this.config.actions['update'].method,
-            url: this.config.url.concat(this.config.actions['update'].path),
+            url: this.config.url.concat(this.config.actions['update'].path).replace(':id',id),
             data: book
           });
     }
     delete(id) {
         return axios({
-            method: this.config.actions['update'].method,
-            url: this.config.url.concat(this.config.actions['update'].path).replace(':id',id),
+            method: this.config.actions['delete'].method,
+            url: this.config.url.concat(this.config.actions['delete'].path).replace(':id',id),
           });
     }
     add(book) {
