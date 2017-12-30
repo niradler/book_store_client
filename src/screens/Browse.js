@@ -12,9 +12,16 @@ class Browse extends Component {
 this.state={
 books:[]
 }
+this.search=this.search.bind(this);
   }
     componentWillMount(){
         server.getAll().then((r)=>{
+        this.setState({books:r.data})
+        });
+    }
+    search(e){
+      const q = e.target.value;
+      server.search(q).then((r)=>{
         this.setState({books:r.data})
         });
     }
@@ -26,7 +33,10 @@ books:[]
 
       </GridCell>
       <GridCell span="7">
-      <TextField withLeadingIcon={<TextFieldIcon use="search"/>} label="Search something..." /><br/>
+   
+        <TextField onChange={this.search} withLeadingIcon={<TextFieldIcon use="search"/>} label="Search something..." /><br/>
+    
+      
       </GridCell>
       </Grid>
     <Grid>

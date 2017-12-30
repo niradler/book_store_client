@@ -41,6 +41,13 @@ class Server {
             data: book
           });
     }
+    search(q) {
+        return axios({
+            method: this.config.actions['search'].method,
+            url: this.config.url.concat(this.config.actions['search'].path),
+            params: {q}
+          });
+    }
 }
 
 const server = new Server(config());

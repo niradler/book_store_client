@@ -21,6 +21,10 @@ export default () => {
             add:{
                 method: 'POST',
                 path: '/book'
+            },
+            search:{
+                method: 'GET',
+                path: '/book/search'
             }
         }
     }
