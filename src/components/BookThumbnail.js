@@ -22,7 +22,7 @@ class BookThumbnail extends Component {
         
     <Card style={{width: '320px'}} >
 	<CardMedia >
-    <img src="book_cover.jpg" alt="" style={{
+    <img src="/book_store_client/book_cover.jpg" alt="" style={{
 		height: '16.313rem'
 	}}/>
 	</CardMedia>

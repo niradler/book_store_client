@@ -7,7 +7,7 @@ import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter } from 'react-router-dom'
 
 ReactDOM.render(
-<BrowserRouter>
+<BrowserRouter basename="/book_store_client">
     <App />
   </BrowserRouter>, document.getElementById('root'));
 registerServiceWorker();
