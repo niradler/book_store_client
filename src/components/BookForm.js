@@ -40,7 +40,7 @@ componentWillMount(){
     const state = this.state
     const book = state.book;
     Validator.validateAll(book,this.props.type).then(r=>{
-        this.setState({dialogIsOpen: true,book:{}},()=>{
+        this.setState({dialogIsOpen: true},()=>{
             this.props.formSubmit(book);
         });
     }).catch(e=>{
