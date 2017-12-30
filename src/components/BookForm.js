@@ -62,7 +62,7 @@ onChange(e){
     return (
       <div className="BookForm">
           {/*     width: 313px; */}
-      <Card style={{width: '520px'}}>
+      <Card style={{width: window.innerWidth>800?'520px':'315px'}}>
 	<CardPrimary>
 		<CardTitle large>{this.state.title}</CardTitle>
 	</CardPrimary>

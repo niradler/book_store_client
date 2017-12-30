@@ -12,15 +12,20 @@ import {
   Icon
 } from 'rmwc';
 import moment from 'moment'
-const barStyle={
-  textDecoration: 'none'
+const Style={
+  link:{
+    textDecoration: 'none'
+  },
+ card:{
+  width: window.innerWidth>800?'320px':'285px'
+ }
 }
 class BookThumbnail extends Component {
   render() {
     return (
       <div className="BookThumbnail">
         
-    <Card style={{width: '320px'}} >
+    <Card style={Style.card} >
 	<CardMedia >
     <img src="/book_store_client/book_cover.jpg" alt="" style={{
 		height: '16.313rem'
@@ -37,7 +42,7 @@ class BookThumbnail extends Component {
 	 <CardAction>{this.props.book.genre}</CardAction>
 		<CardAction>{this.props.book.ISBN}</CardAction> 
         <CardAction>{this.props.book.price}$</CardAction> 
-        <CardAction><Link to={`/update/${this.props.book.id}`} style={barStyle}><Icon>edit</Icon></Link></CardAction> 
+        <CardAction><Link to={`/update/${this.props.book.id}`} style={Style.link}><Icon>edit</Icon></Link></CardAction> 
 	</CardActions>
 </Card>
 </div>
