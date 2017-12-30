@@ -17,6 +17,10 @@ export default () => {
             delete:{
                 method: 'DELETE',
                 path: '/book/:id'
+            },
+            add:{
+                method: 'POST',
+                path: '/book'
             }
         }
     }

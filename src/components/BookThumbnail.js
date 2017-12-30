@@ -10,11 +10,13 @@ import {
   CardSubtitle,
   Icon
 } from 'rmwc';
+import moment from 'moment'
 class BookThumbnail extends Component {
   render() {
     return (
       <div className="BookThumbnail">
-    <Card style={{width: '320px'}}>
+        
+    <Card style={{width: '320px'}} >
 	<CardMedia >
     <img src="book_cover.jpg" alt="" style={{
 		height: '16.313rem'
@@ -25,7 +27,7 @@ class BookThumbnail extends Component {
 		<CardSubtitle>{this.props.book.author}</CardSubtitle>
 	</CardPrimary>
 	<CardSupportingText>
-    {this.props.book.publication_date}
+    {moment(this.props.book.publication_date,'YYYY-MM-DD').format('MMM Do YYYY') }
 	</CardSupportingText>
 	<CardActions>
 	 <CardAction>{this.props.book.genre}</CardAction>
